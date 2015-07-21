@@ -3,6 +3,7 @@
 angular.module('shareAnImgApp')
 	.controller('MainCtrl', function ($scope, $http, Auth, socket) {
 		$scope.allLinks = [];
+		$scope.isLoggedIn = Auth.isLoggedIn;
 
 		$http.get('/api/imgLinks').success(function(allLinks) {
 			$scope.allLinks = allLinks;
