@@ -10,11 +10,15 @@ angular.module('shareAnImgApp')
 			socket.syncUpdates('imgLink', $scope.allLinks);
 		});
 
+		$scope.userIsOwner = function(link) {
+			return link.owner === Auth.getCurrentUser()._id;
+		};
+
 		$scope.addLink = function() {
 			if($scope.newLink === '') {
 				return;
 			}
-			$http.post('/api/imgLinks', { link: $scope.newLink, owner: Auth.getCurrentUser() });
+			$http.post('/api/imgLinks', { link: $scope.newLink, owner: Auth.getCurrentUser()._id });
 			$scope.newLink = '';
 		};
 
