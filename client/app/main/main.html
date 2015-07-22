@@ -10,13 +10,13 @@
 			</span>
 		</p>
 	</form>
-	
+
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">Images:</h1>
-			<ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="link in allLinks">
-				<li><a href="#">{{link.link}}<button type="button" class="close" ng-click="deleteLink(link)">&times;</button></a></li>
-			</ul>
+			<div class="col-md-4 col-lg-4 col-sm-6" ng-repeat="link in allLinks">
+				<img class="col-md-4 col-lg-4 col-sm-6" ng-src="{{link.link}}"></img><button type="button" class="close" ng-click="deleteLink(link)">&times;</button></a></li>
+			</div>
 		</div>
 	</div>
 </div>
