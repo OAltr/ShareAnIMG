@@ -2,7 +2,6 @@
 
 <div class="container">
 	<form class="link-form" ng-show="isLoggedIn()">
-		<label>Syncs in realtime across clients</label>
 		<p class="input-group">
 			<input type="text" class="form-control" placeholder="Add a Image-link here." ng-model="newLink">
 			<span class="input-group-btn">
@@ -13,9 +12,8 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Images:</h1>
 			<div class="col-md-4 col-lg-4 col-sm-6" ng-repeat="link in allLinks">
-				<img class="col-md-4 col-lg-4 col-sm-6" ng-src="{{link.link}}"></img>
+				<img class="col-sm-12" ng-src="{{link.link}}"></img>
 				<button type="button" class="close" ng-click="deleteLink(link)" ng-show="userIsOwner(link)">&times;</button></a>
 			</div>
 		</div>
