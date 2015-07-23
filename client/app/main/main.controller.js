@@ -1,12 +1,17 @@
 'use strict';
 
 angular.module('shareAnImgApp')
-	.controller('MainCtrl', function ($scope, $http, Auth, socket) {
+	.controller('MainCtrl', function ($scope, $http, Auth, socket, angularGridInstance) {
 		$scope.allLinks = [];
 		$scope.isLoggedIn = Auth.isLoggedIn;
 
 		$http.get('/api/imgLinks').success(function(allLinks) {
 			$scope.allLinks = allLinks;
+
+			$scope.refresh = function() {
+				angularGridInstance.gallery.refresh();
+			};
+
 			socket.syncUpdates('imgLink', $scope.allLinks);
 		});
 

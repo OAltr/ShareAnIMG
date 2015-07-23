@@ -12,3 +12,40 @@
 .navbar-text {
 		margin-left: 15px;
 }
+
+.dynamic-grid {
+		position: relative;
+		display: none;
+}
+
+.dynamic-grid.angular-grid {
+		display: block;
+}
+
+.grid {
+		padding: 15px;
+		border: 1px solid #cccccc;
+		border-radius: 15px;
+		position: absolute;
+		list-style: none;
+		background: #ffffff;
+		box-sizing: border-box;
+		-moz-box-sizing : border-box;
+		-webkit-transition: all 0.2s ease-out;
+		transition: all 0.2s ease-out;
+}
+
+.grid-img {
+		width: 100%;
+		vertical-align: middle;
+		-webkit-transition: opacity 0.2s ease-out;
+		transition: opacity 0.2s ease-out;
+		background-color: #fff;
+		visibility: hidden;
+		opacity: 0;
+}
+
+.grid-img.img-loaded {
+		visibility: visible;
+		opacity: 1;
+}
