@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('shareAnImgApp')
-	.controller('MainCtrl', function ($scope, $http, Auth, socket, angularGridInstance) {
+	.controller('MainCtrl', function ($scope, $http, Auth, socket) {
 		$scope.allLinks = [];
 		$scope.isLoggedIn = Auth.isLoggedIn;
 
@@ -12,9 +12,6 @@ angular.module('shareAnImgApp')
 				// - find a way to do a working reload of the grid
 				// or
 				// - load the images using $http and then add ta an image array
-			$scope.refresh = function() {
-				angularGridInstance.gallery.refresh();
-			};
 
 			socket.syncUpdates('imgLink', $scope.allLinks);
 		});

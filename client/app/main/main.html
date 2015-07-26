@@ -12,10 +12,10 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<ul class="dynamic-grid" angular-grid="pics" grid-width="250" gutter-size="10" angular-grid-id="gallery">
-				<li ng-repeat="link in allLinks" class="grid">
+			<ul>
+				<li ng-repeat="link in allLinks">
 					<button type="button" class="close" ng-click="deleteLink(link)" ng-show="userIsOwner(link)">&times;</button>
-					<img class="grid-img" ng-src="{{link.link}}" />
+					<img ng-src="{{link.link}}" />
 				</li>
 			</ul>
 		</div>

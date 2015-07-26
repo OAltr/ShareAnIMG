@@ -6,8 +6,7 @@ angular.module('shareAnImgApp', [
 	'ngSanitize',
 	'btford.socket-io',
 	'ui.router',
-	'ui.bootstrap',
-	'angularGrid'
+	'ui.bootstrap'
 ])
 	.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 		$urlRouterProvider
