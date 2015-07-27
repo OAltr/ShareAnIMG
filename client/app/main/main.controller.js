@@ -8,11 +8,6 @@ angular.module('shareAnImgApp')
 		$http.get('/api/imgLinks').success(function(allLinks) {
 			$scope.allLinks = allLinks;
 
-			// TODO: To Fix #1 either:
-				// - find a way to do a working reload of the grid
-				// or
-				// - load the images using $http and then add ta an image array
-
 			socket.syncUpdates('imgLink', $scope.allLinks);
 		});
 

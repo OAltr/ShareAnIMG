@@ -11,14 +11,14 @@
 	</form>
 
 	<div class="row">
-		<div class="col-lg-12">
-			<ul>
-				<li ng-repeat="link in allLinks">
+		<masonry class="col-xs-12" preserve-order>
+			<div class="col-xs-6 col-sm-4 col-lg-3 masonry-brick" ng-repeat="link in allLinks">
+				<div class="image-container">
 					<button type="button" class="close" ng-click="deleteLink(link)" ng-show="userIsOwner(link)">&times;</button>
-					<img ng-src="{{link.link}}" />
-				</li>
-			</ul>
-		</div>
+					<center><img ng-src="{{link.link}}" /></center>
+				</div>
+			</div>
+		</masonry>
 	</div>
 </div>
 
