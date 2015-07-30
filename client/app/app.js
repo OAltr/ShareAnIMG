@@ -53,4 +53,13 @@ angular.module('shareAnImgApp', [
 				}
 			});
 		});
+
+		$rootScope.$on('$stateChangeStart', function (event, next) {
+			Auth.isAdminAsync(function(isAdmin) {
+				if (next.needAdmin && !isAdmin) {
+					event.preventDefault();
+					$location.path('/login');
+				}
+			});
+		});
 	});
